@@ -26,7 +26,7 @@ public class BasicLuisDialog : LuisDialog<object>
     [LuisIntent("GetHouseValue")]
     public async Task MyIntent(IDialogContext context, LuisResult result)
     {
-        await context.PostAsync($"{result}"); //
+        await context.PostAsync($"{result.Query}"); //
         context.Wait(MessageReceived);
     }
 }
